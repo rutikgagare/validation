@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validation</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            font-family: 'Ubuntu', sans-serif;
+            background-color: rgba(250, 247, 247, 0.938);
+        }
+        #form{
+            display: flex;
+            align-items: center;
+        }
+        form{
+            margin: 150px auto;
+            padding: 50px 0px 0px 0px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border:2px solid black;
+            border-radius: 5px;
+            height: 250px;
+            width: 500px;
+            font-size: medium;
+        }
+        form label{
+            margin: 20px auto;
+            padding: 10px auto;
+        }
+        #submit{
+            width: 40%;
+            padding: 10px;
+            color: white;
+            margin: 20px 0px 0px 0px;
+            border: 2px solid rgb(14, 13, 13);
+            border-radius: 10px;
+            text-align: center;
+            background-color: rgb(219, 25, 25);
+        }
+        
+      
+    </style>
+</head>
+
+<body>
+    <div id="form">
+        <form>
+            <label>prefered email address:
+                <input type="email" id="email_addr" name="email1" value="rutik@gmail.com" required>
+            </label>
+            
+            <label>Repeat email address:
+                <input type="email" id="email_repeat" name="email2" required onchange="check()">
+            </label>
+    
+            <input id="submit" type="submit" value="Confirm Emails!" onclick=" return check();">
+        </form>
+    
+    </div>
+   
+    <script>
+        function check(){
+            var email1 = document.getElementById('email_addr');
+            var email2 = document.getElementById('email_repeat');
+            if(email1.value != email2.value){
+                alert("The two emails must match");
+                return false;
+            }
+        }
+    </script>
+    
+</body>
+</html>
